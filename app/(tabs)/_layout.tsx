@@ -21,22 +21,29 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: Colors.brown,
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
-      }}>
+        headerShown: false,
+        tabBarStyle: { backgroundColor: '#000' },
+        tabBarShowLabel: false,
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name='index'
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon
+              name='home'
+              color={focused ? Colors.brown : Colors.grey}
+            />
+          ),
           headerRight: () => (
-            <Link href="/modal" asChild>
+            <Link href='/modal' asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
-                    name="info-circle"
+                    name='info-circle'
                     size={25}
                     color={Colors[colorScheme ?? 'light'].text}
                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
@@ -48,10 +55,36 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name='two'
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon
+              name='shopping-bag'
+              color={focused ? Colors.brown : Colors.grey}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='favorites'
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon
+              name='heart'
+              color={focused ? Colors.brown : Colors.grey}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='notifications'
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon
+              name='bell'
+              color={focused ? Colors.brown : Colors.grey}
+            />
+          ),
         }}
       />
     </Tabs>
