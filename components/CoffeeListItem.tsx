@@ -1,18 +1,15 @@
 import { View, Text } from '@/components/Themed';
 import dummyCoffee from '@/assets/data/dummyCoffee.json';
 import { FlatList, StyleSheet, Pressable } from 'react-native';
+import CoffeeItem from './CoffeeItem';
 
 const CoffeeListItem = () => {
   return (
     <View>
       <FlatList
-        contentContainerStyle={{ gap: 5, padding: 10 }}
+        contentContainerStyle={{ gap: 10, padding: 10 }}
         data={dummyCoffee}
-        renderItem={(item) => (
-          <Pressable style={styles.container}>
-            <Text>{item.item.title}</Text>
-          </Pressable>
-        )}
+        renderItem={({ item }) => <CoffeeItem item={item} />}
         horizontal
         showsHorizontalScrollIndicator={false}
       />

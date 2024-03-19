@@ -15,13 +15,7 @@ export default function TabOneScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Find the best Coffee for you</Text>
-      <View style={styles.inputContainer}>
-        <FontAwesome name='search' size={25} color={Colors.grey} />
-        <TextInput
-          placeholder='Find Your Coffee...'
-          onChangeText={searchInput}
-        />
-      </View>
+
       <CoffeeListItem />
     </SafeAreaView>
   );
@@ -36,15 +30,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     padding: 10,
-  },
-  inputContainer: {
-    backgroundColor: Colors.darkgrey,
-    borderRadius: 30,
-    padding: 15,
-    marginTop: 20,
-    width: '90%',
-    alignSelf: 'center',
-    flexDirection: 'row',
-    gap: 20,
   },
 });
