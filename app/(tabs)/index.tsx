@@ -14,7 +14,7 @@ export default function TabOneScreen() {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Find the best Coffee for you</Text>
+      <Text style={styles.title}>Find The Best Coffee For You</Text>
       <View style={styles.inputContainer}>
         <Pressable>
           <FontAwesome name='search' size={20} color={Colors.grey} />
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     width: '90%',
     borderRadius: 30,
     borderColor: Colors.grey,
-    borderWidth: 1,
+    borderWidth: 2,
     padding: 10,
     marginVertical: 10,
     alignSelf: 'center',

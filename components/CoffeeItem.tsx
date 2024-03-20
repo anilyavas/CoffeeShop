@@ -5,6 +5,7 @@ import { StyleSheet, Image, Pressable } from 'react-native';
 
 const CoffeeItem = ({ item }: { item: any }) => {
   const [product, setProduct] = useState();
+
   return (
     <View style={styles.coffeeContainer}>
       <View style={styles.productContainer}>
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
   },
   productContainer: {
     gap: 5,
-    padding: 10,
+    padding: 15,
     backgroundColor: Colors.darkgrey,
     margin: 10,
     borderRadius: 30,
