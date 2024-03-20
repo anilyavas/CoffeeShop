@@ -1,17 +1,17 @@
 import { View, Text } from '@/components/Themed';
 import dummyCoffee from '@/assets/data/dummyCoffee.json';
-import { FlatList, StyleSheet, Pressable } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import CoffeeItem from './CoffeeItem';
 
 const CoffeeListItem = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
-        contentContainerStyle={{ gap: 10, padding: 10 }}
+        numColumns={2}
+        contentContainerStyle={{ gap: 10 }}
         data={dummyCoffee}
         renderItem={({ item }) => <CoffeeItem item={item} />}
-        horizontal
-        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
@@ -21,6 +21,8 @@ export default CoffeeListItem;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    flex: 1,
+    height: '100%',
+    alignItems: 'center',
   },
 });

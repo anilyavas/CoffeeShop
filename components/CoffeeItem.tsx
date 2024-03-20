@@ -17,7 +17,8 @@ export default CoffeeItem;
 
 const styles = StyleSheet.create({
   coffeeContainer: {
-    margin: 5,
+    padding: 15,
+    marginTop: 10,
   },
   productContainer: {
     gap: 5,

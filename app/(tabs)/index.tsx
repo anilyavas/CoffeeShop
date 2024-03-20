@@ -1,8 +1,7 @@
-import { StyleSheet, SafeAreaView, TextInput } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 
-import { Text, View } from '@/components/Themed';
+import { Text } from '@/components/Themed';
 import Colors from '@/constants/Colors';
-import { FontAwesome } from '@expo/vector-icons';
 import { useState } from 'react';
 import CoffeeListItem from '@/components/CoffeeListItem';
 
@@ -30,5 +29,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     padding: 10,
+    color: Colors.brown,
   },
 });
