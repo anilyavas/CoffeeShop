@@ -1,9 +1,10 @@
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView, TextInput, Pressable } from 'react-native';
 
-import { Text } from '@/components/Themed';
+import { Text, View } from '@/components/Themed';
 import Colors from '@/constants/Colors';
 import { useState } from 'react';
 import CoffeeListItem from '@/components/CoffeeListItem';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function TabOneScreen() {
   const [input, setInput] = useState();
@@ -14,7 +15,16 @@ export default function TabOneScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Find the best Coffee for you</Text>
-
+      <View style={styles.inputContainer}>
+        <Pressable>
+          <FontAwesome name='search' size={20} color={Colors.grey} />
+        </Pressable>
+        <TextInput
+          placeholder='Find your coffee...'
+          style={{ fontSize: 20, color: Colors.white }}
+          onChangeText={searchInput}
+        />
+      </View>
       <CoffeeListItem />
     </SafeAreaView>
   );
@@ -23,6 +33,17 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  inputContainer: {
+    width: '90%',
+    borderRadius: 30,
+    borderColor: Colors.grey,
+    borderWidth: 1,
+    padding: 10,
+    marginVertical: 10,
+    alignSelf: 'center',
+    flexDirection: 'row',
+    gap: 10,
   },
   title: {
     fontSize: 30,

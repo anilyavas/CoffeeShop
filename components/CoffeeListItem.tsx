@@ -8,10 +8,15 @@ const CoffeeListItem = () => {
     <View style={styles.container}>
       <FlatList
         numColumns={2}
-        contentContainerStyle={{ gap: 10 }}
+        contentContainerStyle={{
+          flexWrap: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
         data={dummyCoffee}
         renderItem={({ item }) => <CoffeeItem item={item} />}
         showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
       />
     </View>
   );
