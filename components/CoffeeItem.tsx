@@ -1,18 +1,14 @@
 import { View, Text } from '@/components/Themed';
 import Colors from '@/constants/Colors';
+import { Product } from '@/constants/types';
+import { Link } from 'expo-router';
 import { useState } from 'react';
 import { StyleSheet, Image, Pressable } from 'react-native';
 
-type Product = {
-  image: string;
-  title: string;
-  ingredients: string;
-  price: string;
-};
 const CoffeeItem = ({ item }: { item: Product }) => {
   const [product, setProduct] = useState();
 
-  const addFavorite = () => {};
+  const addToCart = () => {};
   return (
     <View style={styles.coffeeContainer}>
       <View style={styles.productContainer}>
@@ -25,21 +21,23 @@ const CoffeeItem = ({ item }: { item: Product }) => {
           <Text style={styles.price}>
             $ <Text> {item.price}</Text>
           </Text>
-          <Pressable
-            onPress={addFavorite}
-            style={{
-              margin: 10,
-              padding: 5,
-              backgroundColor: Colors.brown,
-              borderRadius: 10,
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: 30,
-              height: 30,
-            }}
-          >
-            <Text style={{ fontSize: 16 }}>+</Text>
-          </Pressable>
+          <Link href={`/(tabs)/${item.id}`} asChild>
+            <Pressable
+              onPress={addToCart}
+              style={{
+                margin: 10,
+                padding: 5,
+                backgroundColor: Colors.brown,
+                borderRadius: 10,
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: 30,
+                height: 30,
+              }}
+            >
+              <Text style={{ fontSize: 16 }}>+</Text>
+            </Pressable>
+          </Link>
         </View>
       </View>
     </View>
