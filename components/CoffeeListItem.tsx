@@ -7,12 +7,12 @@ const CoffeeListItem = () => {
   return (
     <View style={styles.container}>
       <FlatList
-        numColumns={2}
         contentContainerStyle={{
           flexWrap: 1,
           justifyContent: 'center',
           alignItems: 'center',
         }}
+        numColumns={2}
         data={dummyCoffee}
         renderItem={({ item }) => <CoffeeItem item={item} />}
         showsVerticalScrollIndicator={false}

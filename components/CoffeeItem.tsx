@@ -3,9 +3,16 @@ import Colors from '@/constants/Colors';
 import { useState } from 'react';
 import { StyleSheet, Image, Pressable } from 'react-native';
 
-const CoffeeItem = ({ item }: { item: any }) => {
+type Product = {
+  image: string;
+  title: string;
+  ingredients: string;
+  price: string;
+};
+const CoffeeItem = ({ item }: { item: Product }) => {
   const [product, setProduct] = useState();
 
+  const addFavorite = () => {};
   return (
     <View style={styles.coffeeContainer}>
       <View style={styles.productContainer}>
@@ -19,7 +26,7 @@ const CoffeeItem = ({ item }: { item: any }) => {
             $ <Text> {item.price}</Text>
           </Text>
           <Pressable
-            onPress={() => setProduct(product)}
+            onPress={addFavorite}
             style={{
               margin: 10,
               padding: 5,
